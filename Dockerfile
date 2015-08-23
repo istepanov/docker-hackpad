@@ -14,7 +14,7 @@ WORKDIR /home/hackpad
 RUN git clone --depth 1 https://github.com/dropbox/hackpad.git && rm -rf hackpad/.git
 ADD exports.sh hackpad/bin/exports.sh
 
-RUN mkdir lib/
+RUN mkdir -p lib/ data/logs/
 RUN wget https://cdn.mysql.com/archives/mysql-connector-java-5.1/mysql-connector-java-5.1.34.tar.gz && \
     tar -xzvf mysql-connector-java-5.1.34.tar.gz && \
     mv mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar lib/ && \
@@ -28,4 +28,4 @@ RUN chmod +x start.sh
 
 EXPOSE 9000
 
-CMD ['/home/hackpad/start.sh']
+CMD '/home/hackpad/start.sh'

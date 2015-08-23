@@ -9,5 +9,5 @@ mysql:
   environment:
     MYSQL_ROOT_PASSWORD: root_password
     MYSQL_USER: hackpad
-    MYSQL_PASSWORD: hackpad
-    MYSQL_DATABASE: password
+    MYSQL_PASSWORD: password
+    MYSQL_DATABASE: hackpad

@@ -11,6 +11,7 @@ DB_NAME=${DB_NAME:-hackpad}
 DB_USERNAME=${DB_USERNAME:-hackpad}
 DB_PASSWORD=${DB_PASSWORD:-password}
 TOP_DOMAINS=${TOP_DOMAINS:-localhost,localbox.info}
+USE_HTTPS_URLS=${USE_HTTPS_URLS:-false}
 
 cp hackpad/etherpad/etc/etherpad.local.properties.tmpl hackpad/etherpad/etc/etherpad.local.properties
 
@@ -21,6 +22,7 @@ sed -i.bak s/__dbc_dbname__/$DB_NAME/g hackpad/etherpad/etc/etherpad.local.prope
 sed -i.bak s/__dbc_dbuser__/$DB_USERNAME/g hackpad/etherpad/etc/etherpad.local.properties
 sed -i.bak s/__dbc_dbpass__/$DB_PASSWORD/g hackpad/etherpad/etc/etherpad.local.properties
 sed -i.bak "s/^\(topdomains = \).*$/\1$TOP_DOMAINS/g" hackpad/etherpad/etc/etherpad.local.properties
+sed -i.bak "s/^\(useHttpsUrls = \).*$/\1$USE_HTTPS_URLS/g" hackpad/etherpad/etc/etherpad.local.properties
 sed -i.bak "s/^\(devMode = \).*$/\1 true/g" hackpad/etherpad/etc/etherpad.local.properties
 sed -i.bak "s/^\(etherpad\.isProduction = \).*$/\1false/g" hackpad/etherpad/etc/etherpad.local.properties
 sed -i.bak "s/^\(logDir = \).*$/\1.\/data\/logs/g" hackpad/etherpad/etc/etherpad.local.properties

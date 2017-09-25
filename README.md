@@ -1,5 +1,7 @@
 # istepanov/hackpad
 
+## THIS PROJECT IS NO LONGER MAINTAINED
+
 [Hackpad](https://github.com/dropbox/hackpad) Docker image
 
 Docker Hub [link](https://hub.docker.com/r/istepanov/hackpad/)
